@@ -1,4 +1,4 @@
-package com.SpaceShips.domain;
+package com.SpaceShips.domain.Abstract;
 
 public abstract class  SpaceVehicle {
 	

@@ -1,5 +1,7 @@
 package com.SpaceShips.domain;
 
+import com.SpaceShips.domain.Abstract.SpaceVehicle;
+
 public class MannedSpacecraft extends SpaceVehicle{
 
 	private int numbreOfpassengers;
