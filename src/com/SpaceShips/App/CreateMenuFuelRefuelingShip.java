@@ -82,6 +82,7 @@ public class CreateMenuFuelRefuelingShip implements Menu {
 	 * @since 1.00.000 2022-02-18
 	 */
 	public FuelRefuelingShip CreateFuelRefuelingShip() {
+		
 		return new FuelRefuelingShip(name, fuelCapacity, power, speed, weight, propulsionSystem);
 	}
 

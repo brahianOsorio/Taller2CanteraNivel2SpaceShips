@@ -17,7 +17,7 @@ import com.SpaceShips.domain.UnmannedSpacecraft;
  * FirstMenu menu = new FirstMenu(); 
  * menu.start();
  * 
- * @version 1.00.000 2022-02-18
+ * @version 1.00.001 2022-02-18
  *  
  * @author Brahian Osorio 
  * 		   brahianstiven.osorio@gmail.com
@@ -97,7 +97,6 @@ public class FirstMenu implements Menu {
 					System.out.println("Se ha Creado La Nave Tripulada");
 					break;
 				case 4:
-
 					CreateMenuFuelRefuelingShip menuFuelRefuelingShip = new CreateMenuFuelRefuelingShip();
 					menuFuelRefuelingShip.start();
 					listFuelRefuelingShip.add(menuFuelRefuelingShip.CreateFuelRefuelingShip());
@@ -105,6 +104,7 @@ public class FirstMenu implements Menu {
 
 					break;
 				case 5:
+					
 					System.out.println("Naves De lanzadera");
 					if (listShuttleVehicle.isEmpty()) {
 						System.out.println("No hay Naves De lanzadera ");
@@ -115,6 +115,8 @@ public class FirstMenu implements Menu {
 										+ " la potencia: " + Ship.power + " la velocidad: " + Ship.speed + " El peso: "
 										+ Ship.weight + " El Sistema de Propulsion: " + Ship.propulsionSystem));
 					}
+					
+					
 					System.out.println("Naves No Tripulada");
 					if (listUnmannedSpacecraft.isEmpty()) {
 						System.out.println("No hay Naves No Tripuladas ");
@@ -126,6 +128,8 @@ public class FirstMenu implements Menu {
 										+ Ship.power + " la velocidad: " + Ship.speed + " El peso: " + Ship.weight
 										+ " El Sistema de Propulsion: " + Ship.propulsionSystem));
 					}
+					
+					
 					System.out.println("Naves Tripuladas");
 					if (listMannedSpacecraft.isEmpty()) {
 						System.out.println("No hay Naves Tripuladas ");
@@ -137,16 +141,20 @@ public class FirstMenu implements Menu {
 										+ Ship.speed + " El peso: " + Ship.weight + " El Sistema de Propulsion: "
 										+ Ship.propulsionSystem));
 					}
+					
+					
 					System.out.println("Naves Recargadoras de Conbustible");
-					if (listShuttleVehicle.isEmpty()) {
+					if (listFuelRefuelingShip.isEmpty()) {
 						System.out.println("No hay Naves Recargadoras de Conbustible ");
 					} else {
 						listFuelRefuelingShip.stream()
 								.forEach((Ship) -> System.out.println(Ship.getName()
-										+ " El Cantidad De Combustible Que Trae: " + Ship.getFuelCapacity()
+										+ " LA Cantidad De Combustible Que Trae: " + Ship.getFuelCapacity()
 										+ " la potencia: " + Ship.power + " la velocidad: " + Ship.speed + " El peso: "
 										+ Ship.weight + " El Sistema de Propulsion: " + Ship.propulsionSystem));
 					}
+					
+					
 					break;
 				case 6:
 					exit = true;
