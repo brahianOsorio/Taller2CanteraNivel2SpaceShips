@@ -4,12 +4,13 @@ import com.SpaceShips.domain.Abstract.SpaceVehicle;
 
 public class UnmannedSpacecraft extends SpaceVehicle{
 
-	private String fuel , mission ;
+	private String fuel , mission , name  ;
 	private boolean missionState;
 	
 	
 	
-	public UnmannedSpacecraft(String fuel, String mission, boolean missionState,double power,double speed,double weight,String propulsionSystem) {
+	public UnmannedSpacecraft(String name ,String fuel, String mission, boolean missionState,double power,double speed,double weight,String propulsionSystem) {
+		this.name = name; 
 		this.fuel = fuel;
 		this.mission = mission;
 		this.missionState = missionState;
@@ -22,6 +23,18 @@ public class UnmannedSpacecraft extends SpaceVehicle{
 	
 	
 	
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
 	public String getFuel() {
 		return fuel;
 	}
@@ -74,6 +87,15 @@ public class UnmannedSpacecraft extends SpaceVehicle{
 		
 	}
 	
+	public void takePhotos() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void generateAlert() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

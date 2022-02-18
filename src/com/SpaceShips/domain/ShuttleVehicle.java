@@ -4,12 +4,13 @@ import com.SpaceShips.domain.Abstract.SpaceVehicle;
 
 public class ShuttleVehicle extends SpaceVehicle {
 	
-	private String fuel;
+	private String fuel, name ;
 	private double transportCapacity ;
 	
 	
 	
-	public ShuttleVehicle(String fuel, double transportCapacity, double power,double speed,double weight,String propulsionSystem ) {
+	public ShuttleVehicle(String name , String fuel, double transportCapacity, double power,double speed,double weight,String propulsionSystem ) {
+		this.name = name;
 		this.fuel = fuel;
 		this.transportCapacity = transportCapacity;
 		this.power = power;
@@ -20,6 +21,18 @@ public class ShuttleVehicle extends SpaceVehicle {
 	}
 	
 	
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
 
 	public String getFuel() {
 		return fuel;
@@ -62,6 +75,15 @@ public class ShuttleVehicle extends SpaceVehicle {
 
 	@Override
 	public void communication() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void hookUpShip() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void uncouplingShip() {
 		// TODO Auto-generated method stub
 		
 	}
