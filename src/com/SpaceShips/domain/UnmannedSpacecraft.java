@@ -20,10 +20,16 @@ public class UnmannedSpacecraft extends SpaceVehicle{
 
 	/**
 	 * fuel representa el tipo de combustible. 
+	 */
+	private String fuel;
+	/**
 	 * mission representa la mision que esta haciendo la nave no tripulada. 
+	 */
+	private String mission;
+	/**
 	 * name representa el nombre que tiene la nave no tripulada.
 	 */
-	private String fuel , mission , name  ;
+	private String name  ;
 	/**
 	 * missionState representa el estado de la nave si esta activa o ya inactiva .
 	 */

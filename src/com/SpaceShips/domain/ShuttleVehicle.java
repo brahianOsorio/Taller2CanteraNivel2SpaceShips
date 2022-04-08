@@ -19,9 +19,12 @@ import com.SpaceShips.domain.Abstract.SpaceVehicle;
 public class ShuttleVehicle extends SpaceVehicle {
 	/**
 	 * fuel representa al tipo de combustible que tiene la nave.
+	 */
+	private String fuel;
+	/**
 	 * name representa el nombre de la nave.
 	 */
-	private String fuel, name ;
+	private String name;
 	/**
 	 * transportCapacity representa la capacidad que tiene la nave de trasportar el en peso.
 	 */

@@ -1,8 +1,5 @@
 package com.SpaceShips.App;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 import com.SpaceShips.App.Interface.Menu;
 import com.SpaceShips.domain.ShuttleVehicle;
 
@@ -23,17 +20,33 @@ import com.SpaceShips.domain.ShuttleVehicle;
 
 public class CreateMenuShuttleVehicle implements Menu {
 	/**
-	 * representa al dato que va proporcionar la facilidad para crear la instancia de la naver nueva.
+	 * Esta variable Representa el tipo de combustible que tiene la lanzadera
 	 */
-	private String fuel,propulsionSystem, name ;
+	private String fuel;
 	/**
-	 * representa al dato que va proporcionar la facilidad para crear la instancia de la naver nueva.
+	 * Esta variable representa el sistema de propulsion que tiene la lanzadera
 	 */
-	private double transportCapacity , power, speed, weight ;
+	private String propulsionSystem;
 	/**
-	 * reader representa a la variable que va a leer los datos de la consola.
+	 * Esta variable Representa al nombre de la lanzadera
 	 */
-	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	private String name ;
+	/**
+	 * Esta variable representa La Capacidad de Trasporte que tiene la lanzadera
+	 */
+	private double transportCapacity;
+	/**
+	 * Esta variable representa la potencia que tiene la lanzadera
+	 */
+	private double power;
+	/**
+	 * Esta Variable Representa la velocidad que tiene la lanzadera
+	 */
+	private double speed;
+	/**
+	 * Esta variable representa el peso de la lanzadera
+	 */
+	private double weight;
 
 	/**
 	 * este metodo muestra el menu de inicio para crear una nave de lanzadera.
@@ -50,20 +63,13 @@ public class CreateMenuShuttleVehicle implements Menu {
 	@Override
 	public void start() {
 		try {
-			System.out.println("Ingrese el nombre de la nave ");
-			name = reader.readLine();
-			System.out.println("Ingrese el Combustible que usa la lanzadera");
-			fuel = reader.readLine();
-			System.out.println("Ingrese la capacidad de carga de la lanzadera");
-			transportCapacity =  Double.parseDouble(reader.readLine()); 
-			System.out.println("Ingrese la Potencia que tiene la lanzadera");
-			power = Double.parseDouble(reader.readLine()); 
-			System.out.println("Ingrese la velocidad que tiene la lanzadera");
-			speed = Double.parseDouble(reader.readLine()); 
-			System.out.println("Ingrese el peso que tiene lanzadera");
-			weight = Double.parseDouble(reader.readLine()); 
-			System.out.println("Ingrese el sistema de propulcion de la lanzadera");
-			propulsionSystem = reader.readLine();
+			name = ValidatorMenu.getText("Ingrese el nombre de la nave ");
+			fuel = ValidatorMenu.getText("Ingrese el Combustible que usa la lanzadera");
+			transportCapacity =  ValidatorMenu.getNumber("Ingrese la capacidad de carga de la lanzadera");
+			power = ValidatorMenu.getNumber("Ingrese la Potencia que tiene la lanzadera");
+			speed = ValidatorMenu.getNumber("Ingrese la velocidad que tiene la lanzadera");
+			weight = ValidatorMenu.getNumber("Ingrese el peso que tiene lanzadera");
+			propulsionSystem = ValidatorMenu.getText("Ingrese el sistema de propulcion de la lanzadera");
 			
 			
 		} catch (Exception exeption) {

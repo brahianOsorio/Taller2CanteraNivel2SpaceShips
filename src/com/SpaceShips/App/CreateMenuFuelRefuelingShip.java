@@ -1,7 +1,5 @@
 package com.SpaceShips.App;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import com.SpaceShips.App.Interface.Menu;
 import com.SpaceShips.domain.FuelRefuelingShip;
 
@@ -22,19 +20,30 @@ import com.SpaceShips.domain.FuelRefuelingShip;
 
 public class CreateMenuFuelRefuelingShip implements Menu {
 	/**
-	 * representa al dato que va proporcionar la facilidad para crear la instancia de la naver nueva.
+	 * Esta Variable representa El Sistema de propulcion de La nave Recargadora De Combustible 
 	 */
-	private String propulsionSystem, name;
+	private String propulsionSystem;
 	/**
-	 * representa al dato que va proporcionar la facilidad para crear la instancia de la naver nueva.
+	 * Esta Variable representa El nombre de La nave Recargadora De Combustible 
 	 */
-	private double power, speed, weight, fuelCapacity;
+	private String name;
 	/**
-	 * reader representa a la variable que va a leer los datos de la consola.
+	 * Esta variable Representa La potencia de la Nave Recargadera de Conbustible
 	 */
-	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	private double power;
+	/**
+	 * Esta variable Representa la velocidad de la Nave Recargadera de Conbustible
+	 */
+	private double speed;
+	/**
+	 * Esta variable Representa el peso de la Nave Recargadera de Conbustible
+	 */
+	private double weight;
+	/**
+	 * Esta variable Representa la capacidad de carga de la Nave Recargadera de Conbustible
+	 */
+	private double fuelCapacity;
 
-	
 	/**
 	 * este metodo muestra el menu de inicio para crear una nave recargadora de combustible.
 	 * 
@@ -50,19 +59,13 @@ public class CreateMenuFuelRefuelingShip implements Menu {
 	@Override
 	public void start() {
 		try {
-			System.out.println("Ingrese el nombre de la Nave   ");
-			name = reader.readLine();
-			System.out.println(
-					"Ingrese la capacidad de contenido de combustible que puede llevar la Nave Recargadora de Conbustible  ");
-			fuelCapacity = Double.parseDouble(reader.readLine());
-			System.out.println("Ingrese la Potencia que tiene la Nave Recargadora de Conbustible ");
-			power = Double.parseDouble(reader.readLine());
-			System.out.println("Ingrese la velocidad que tiene la Nave Recargadora de Conbustible ");
-			speed = Double.parseDouble(reader.readLine());
-			System.out.println("Ingrese el peso que tiene  Nave Recargadora de Conbustible  ");
-			weight = Double.parseDouble(reader.readLine());
-			System.out.println("Ingrese el sistema de propulcion de la Nave Recargadora de Conbustible ");
-			propulsionSystem = reader.readLine();
+			name = ValidatorMenu.getText("Ingrese el nombre de la Nave");
+			fuelCapacity = ValidatorMenu.getNumber("Ingrese la capacidad de contenido de combustible que puede llevar la Nave Recargadora de Conbustible  ");
+			power = ValidatorMenu.getNumber("Ingrese la Potencia que tiene la Nave Recargadora de Conbustible ");
+			speed = ValidatorMenu.getNumber("Ingrese la velocidad que tiene la Nave Recargadora de Conbustible ");
+			weight = ValidatorMenu.getNumber("Ingrese el peso que tiene  Nave Recargadora de Conbustible  ");
+			propulsionSystem = ValidatorMenu.getText("Ingrese el sistema de propulcion de la Nave Recargadora de Conbustible ");
+	
 
 		} catch (Exception exeption) {
 			System.out.println(exeption.getMessage());
